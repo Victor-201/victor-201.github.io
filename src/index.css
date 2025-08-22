@@ -16,7 +16,15 @@
 
 :root {
   --header-height: 60px;
-  --content-padding: 40px;
+  --content-padding: 80px;
+  --nav-gradient: linear-gradient(90deg, #3b82f6 0%, #0ea5e9 50%, #06b6d4 100%);
+}
+
+/* Utility class cho gradient text */
+.text-gradient {
+  @apply bg-clip-text text-transparent;
+  background-image: var(--nav-gradient);
+  filter: drop-shadow(0 0 12px rgba(0,180,255,0.7));
 }
 
 

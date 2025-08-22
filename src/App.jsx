@@ -23,13 +23,13 @@ export default function App() {
 
       {/* Main Content */}
       <div className="px-[var(--content-padding)] pt-[var(--header-height)]">
+        <Header />
         <motion.h1
           className="text-4xl font-bold mb-6"
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <Header />
           
         </motion.h1>
       </div>
