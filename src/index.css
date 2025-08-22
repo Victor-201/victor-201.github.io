@@ -14,5 +14,10 @@
   --color-brand-950: #010812; 
 }
 
+:root {
+  --header-height: 60px;
+  --content-padding: 40px;
+}
+
 
 @custom-variant dark (&:where(.dark, .dark *));
