@@ -9,7 +9,6 @@ export const Providers = ({ children }: { children: React.ReactNode }) => {
   return <ThemeProvider
     attribute="class"
     defaultTheme="dark"
-    disableTransitionOnChange
   >
     <Preloader>
       <SocketContextProvider>
