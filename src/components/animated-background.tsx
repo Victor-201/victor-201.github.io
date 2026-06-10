@@ -29,8 +29,8 @@ const AnimatedBackground = () => {
   const [activeSection, setActiveSection] = useState<Section>("hero");
 
   // Animation controllers refs
-  const bongoAnimationRef = useRef<{ start: () => void; stop: () => void } | undefined>(undefined);
   const keycapAnimationsRef = useRef<{ start: () => void; stop: () => void } | undefined>(undefined);
+  const handAnimationRef = useRef<{ start: () => void; stop: () => void } | undefined>(undefined);
   const timelinesRef = useRef<gsap.core.Timeline[]>([]);
   const sectionVersionRef = useRef(0);
 
@@ -150,39 +150,6 @@ const AnimatedBackground = () => {
     createSectionTimeline("#contact", "contact", "projects", "top 30%");
   };
 
-  const getBongoAnimation = () => {
-    const framesParent = splineApp?.findObjectByName("bongo-cat");
-    const frame1 = splineApp?.findObjectByName("frame-1");
-    const frame2 = splineApp?.findObjectByName("frame-2");
-
-    if (!frame1 || !frame2 || !framesParent) {
-      return { start: () => { }, stop: () => { } };
-    }
-
-    let interval: ReturnType<typeof setInterval>;
-    const start = () => {
-      let i = 0;
-      framesParent.visible = true;
-      interval = setInterval(() => {
-        if (i % 2) {
-          frame1.visible = false;
-          frame2.visible = true;
-        } else {
-          frame1.visible = true;
-          frame2.visible = false;
-        }
-        i++;
-      }, 100);
-    };
-    const stop = () => {
-      clearInterval(interval);
-      framesParent.visible = false;
-      frame1.visible = false;
-      frame2.visible = false;
-    };
-    return { start, stop };
-  };
-
   const getKeycapsAnimation = () => {
     if (!splineApp) return { start: () => { }, stop: () => { } };
 
@@ -223,6 +190,54 @@ const AnimatedBackground = () => {
         tweens.push(t);
       });
       setTimeout(removePrevTweens, 1000);
+    };
+
+    return { start, stop };
+  };
+
+  const getHandAnimation = () => {
+    if (!splineApp) return { start: () => { }, stop: () => { } };
+
+    const parent = splineApp.findObjectByName("keyboard-hand");
+    const frames = [
+      splineApp.findObjectByName("frame-1"),
+      splineApp.findObjectByName("frame-2"),
+      splineApp.findObjectByName("frame-3"),
+      splineApp.findObjectByName("frame-4"),
+    ];
+
+    if (!parent || frames.some((f) => !f)) {
+      return { start: () => { }, stop: () => { } };
+    }
+
+    let interval: ReturnType<typeof setInterval>;
+    let lastIndex = -1;
+
+    const pickNext = () => {
+      let idx: number;
+      do {
+        idx = Math.floor(Math.random() * frames.length);
+      } while (idx === lastIndex);
+      lastIndex = idx;
+      return idx;
+    };
+
+    const start = () => {
+      parent.visible = true;
+      frames.forEach((f) => f!.visible = false);
+      const first = pickNext();
+      frames[first]!.visible = true;
+      interval = setInterval(() => {
+        frames.forEach((f) => f!.visible = false);
+        const next = pickNext();
+        frames[next]!.visible = true;
+      }, 200);
+    };
+
+    const stop = () => {
+      clearInterval(interval);
+      parent.visible = false;
+      frames.forEach((f) => f!.visible = false);
     };
 
     return { start, stop };
@@ -284,11 +299,11 @@ const AnimatedBackground = () => {
     if (!splineApp) return;
     handleSplineInteractions();
     setupScrollAnimations();
-    bongoAnimationRef.current = getBongoAnimation();
     keycapAnimationsRef.current = getKeycapsAnimation();
+    handAnimationRef.current = getHandAnimation();
     return () => {
-      bongoAnimationRef.current?.stop()
       keycapAnimationsRef.current?.stop()
+      handAnimationRef.current?.stop()
       timelinesRef.current.forEach(tl => {
         tl.scrollTrigger?.kill();
         tl.kill();
@@ -393,16 +408,6 @@ const AnimatedBackground = () => {
         teardownKeyboard?.pause();
       }
 
-      if (activeSection === "projects") {
-        await sleep(300);
-        if (currentVersion !== sectionVersionRef.current) return;
-        bongoAnimationRef.current?.start();
-      } else {
-        await sleep(200);
-        if (currentVersion !== sectionVersionRef.current) return;
-        bongoAnimationRef.current?.stop();
-      }
-
       if (activeSection === "contact") {
         await sleep(600);
         if (currentVersion !== sectionVersionRef.current) return;
@@ -413,6 +418,16 @@ const AnimatedBackground = () => {
         if (currentVersion !== sectionVersionRef.current) return;
         teardownKeyboard?.pause();
         keycapAnimationsRef.current?.stop();
+      }
+
+      if (activeSection === "projects") {
+        await sleep(300);
+        if (currentVersion !== sectionVersionRef.current) return;
+        handAnimationRef.current?.start();
+      } else {
+        await sleep(200);
+        if (currentVersion !== sectionVersionRef.current) return;
+        handAnimationRef.current?.stop();
       }
     };
 
@@ -442,7 +457,7 @@ const AnimatedBackground = () => {
           setSplineApp(app);
           bypassLoading();
         }}
-        scene="/assets/skills-keyboard.spline"
+        scene="/assets/skills_keyboard.spline"
       />
     </Suspense>
   );
