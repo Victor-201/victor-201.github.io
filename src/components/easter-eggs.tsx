@@ -1,7 +1,7 @@
 "use client";
 import { useDevToolsOpen } from "@/hooks/use-devtools-open";
 import React, { useEffect, useState } from "react";
-import NyanCat from "./nyan-cat";
+import SkyElements from "./sky-elements";
 import { AnimatePresence } from "framer-motion";
 
 const EasterEggs = () => {
@@ -46,7 +46,7 @@ const EasterEggs = () => {
             const timer = setTimeout(() => {
               console.log(
                 "%cPssttt! 🤫\n\n" +
-                  "Do you like cats?? 😺 If yes, then press 'n' on viewport and see what happens! 🐱✨",
+                  "Press 'n' on viewport and see what happens! 🌠☁️",
                 "color: #FF69B4; font-size: 16px; font-weight: bold; background-color: black; padding: 10px; border-radius: 10px;"
               );
               clearTimeout(timer);
@@ -60,7 +60,7 @@ const EasterEggs = () => {
 
   return (
     <>
-      <NyanCat />
+      <SkyElements />
     </>
   );
 };
