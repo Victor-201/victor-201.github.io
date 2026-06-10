@@ -300,17 +300,18 @@ export const EXPERIENCE: Experience[] = [
 
 export const themeDisclaimers = {
     light: [
-        "Warning: Light mode emits a gazillion lumens of pure radiance!",
-        "Caution: Light mode ahead! Please don't try this at home.",
-        "Only trained professionals can handle this much brightness. Proceed with sunglasses!",
-        "Brace yourself! Light mode is about to make everything shine brighter than your future.",
-        "Flipping the switch to light mode... Are you sure your eyes are ready for this?",
+        "FLASHBANG OUT! I wasn't emotionally or physically prepared for that much brightness.",
+        "You switched to light mode? That's cool and all, but my retinas just submitted their resignation.",
+        "POV: You looked directly at the sun and thought, 'Yeah, I could use a little more brightness.'",
+        "Light mode activated. Sunglasses are highly recommended, but a welding helmet might work better.",
+        "Bro really picked light mode. I'm not judging... I'm just wondering what your eyes ever did to you.",
     ],
+
     dark: [
-        "Light mode? I thought you went insane... but welcome back to the dark side!",
-        "Switching to dark mode... How was life on the bright side?",
-        "Dark mode activated! Thanks you from the bottom of my heart, and my eyes too.",
-        "Welcome back to the shadows. How was life out there in the light?",
-        "Dark mode on! Finally, someone who understands true sophistication.",
+        "Welcome back to dark mode. Your eyes have officially been taken off life support.",
+        "Dark mode activated. Everything feels right again, and the universe is slowly healing.",
+        "Back to the dark side, I see. We saved your spot and even kept the vibes intact.",
+        "Dark mode enabled. Your screen looks cooler, your setup looks cooler, and somehow you do too.",
+        "Good choice. Somewhere out there, a pair of overworked eyeballs just breathed a sigh of relief.",
     ],
 };
