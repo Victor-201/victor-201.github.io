@@ -22,7 +22,7 @@ const SectionWrapper = ({ id, className, children, ...props }: SectionWrapperPro
     <section
       id={id}
       ref={containerRef}
-      className={cn("relative", className)}
+      className={cn("relative max-w-7xl mx-auto pt-28 sm:pb-16 lg:py-24 xl:py-28", className)}
       {...props}
     >
       <motion.div

@@ -11,23 +11,25 @@ import {
 import { usePreloader } from "../preloader";
 import { BlurIn, BoxReveal } from "../reveal-animations";
 import ScrollDownIcon from "../scroll-down-icon";
-import { SiGithub, SiLinkedin, SiX } from "react-icons/si";
-import { config } from "@/data/config";
+import { SiFacebook, SiGithub, SiInstagram } from "react-icons/si";
+import { config } from "@/lib/app-config";
+import { useLocale } from "@/locales/use-locale";
 
 import SectionWrapper from "../ui/section-wrapper";
 
 const HeroSection = () => {
+  const { t } = useLocale();
   const { isLoading } = usePreloader();
 
   return (
-    <SectionWrapper id="about" className={cn("relative w-full h-screen")}>
+    <SectionWrapper id="about" className={cn("w-full h-screen py-0!")}>
       <div className="grid md:grid-cols-2">
         <div
           className={cn(
-            "h-[calc(100dvh-3rem)] md:h-[calc(100dvh-4rem)] z-[2]",
+            "h-[calc(100dvh-3rem)] md:h-[calc(100dvh-4rem)] z-2",
             "col-span-1",
             "flex flex-col justify-start md:justify-center items-center md:items-start",
-            "pt-28 sm:pb-16 md:p-20 lg:p-24 xl:p-28",
+            "pt-28 sm:pb-16 md:p-20 lg:p-24 xl:px-0 xl:py-28",
           )}
         >
           {!isLoading && (
@@ -40,7 +42,7 @@ const HeroSection = () => {
                       "cursor-default font-display sm:text-xl md:text-xl whitespace-nowrap bg-clip-text ",
                     )}
                   >
-                    Hi, I am
+                    {t("common", "hero.greeting")}
                     <br className="md:hidden" />
                   </p>
                 </BlurIn>
@@ -50,14 +52,12 @@ const HeroSection = () => {
                     <TooltipTrigger asChild>
                       <h1
                         className={cn(
-                          "-ml-[6px] leading-none font-thin text-transparent text-slate-800 text-left",
+                          "-ml-1.5 leading-none font-thin text-transparent text-left",
                           "font-thin text-7xl md:text-7xl lg:text-8xl xl:text-9xl",
                           "cursor-default text-edge-outline font-display ",
                         )}
                       >
-                        {config.author.split(" ")[0]}
-                        <br className="md:block hiidden" />
-                        {config.author.split(" ")[1]}
+                        {t("seo", "name")}
                       </h1>
                     </TooltipTrigger>
                     <TooltipContent
@@ -75,7 +75,7 @@ const HeroSection = () => {
                       "cursor-default font-display sm:text-xl md:text-xl whitespace-nowrap bg-clip-text ",
                     )}
                   >
-                    A Full Stack Web Developer
+                    {t("common", "hero.role")}
                   </p>
                 </BlurIn>
               </div>
@@ -90,7 +90,7 @@ const HeroSection = () => {
                   <BoxReveal delay={2} width="100%">
                     <Button className="flex items-center gap-2 w-full">
                       <File size={24} />
-                      <p>Resume</p>
+                      <p>{t("common", "hero.downloadResume")}</p>
                     </Button>
                   </BoxReveal>
                 </Link>
@@ -102,7 +102,7 @@ const HeroSection = () => {
                           variant={"outline"}
                           className="block w-full overflow-hidden"
                         >
-                          Hire Me
+                          {t("common", "hero.hireMe")}
                         </Button>
                       </Link>
                     </TooltipTrigger>
@@ -111,9 +111,18 @@ const HeroSection = () => {
                     </TooltipContent>
                   </Tooltip>
                   <div className="flex items-center h-full gap-2">
-                    <Link to={config.social.twitter} target="_blank">
+                    <Link to={config.social.facebook} target="_blank">
                       <Button variant={"outline"}>
-                        <SiX size={24} />
+                        <SiFacebook size={24} />
+                      </Button>
+                    </Link>
+                    <Link
+                      to={config.social.instagram}
+                      target="_blank"
+                      className="cursor-can-hover"
+                    >
+                      <Button variant={"outline"}>
+                        <SiInstagram size={24} />
                       </Button>
                     </Link>
                     <Link
@@ -123,15 +132,6 @@ const HeroSection = () => {
                     >
                       <Button variant={"outline"}>
                         <SiGithub size={24} />
-                      </Button>
-                    </Link>
-                    <Link
-                      to={config.social.linkedin}
-                      target="_blank"
-                      className="cursor-can-hover"
-                    >
-                      <Button variant={"outline"}>
-                        <SiLinkedin size={24} />
                       </Button>
                     </Link>
                   </div>

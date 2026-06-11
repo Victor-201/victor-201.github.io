@@ -11,7 +11,7 @@ const Stars = (props: React.SVGProps<SVGSVGElement>) => (
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { useToast } from "../ui/use-toast";
-import { themeDisclaimers } from "@/data/constants";
+import { useLocale } from "@/locales/use-locale";
 import { Popover, PopoverContent, PopoverTrigger } from "../ui/popover";
 
 export default function FunnyThemeToggle({
@@ -20,13 +20,13 @@ export default function FunnyThemeToggle({
   className?: string;
 }) {
   const { setTheme, theme } = useTheme();
+  const { t } = useLocale();
   const [darkCount, setDarkCount] = React.useState(0);
   const [lightCount, setLightCount] = React.useState(0);
   const [popoverOpen, setPopoverOpen] = React.useState(false);
   const { toast } = useToast();
 
   const toggleTheme = async (newTheme: string, event: React.MouseEvent) => {
-    // @ts-ignore
     if (!document.startViewTransition || !event) {
       setTheme(newTheme);
       return;
@@ -41,7 +41,6 @@ export default function FunnyThemeToggle({
     const bottom = window.innerHeight - top;
     const maxRadius = Math.hypot(Math.max(left, right), Math.max(top, bottom));
 
-    // @ts-ignore
     const transition = document.startViewTransition(() => {
       flushSync(() => {
         setTheme(newTheme);
@@ -72,8 +71,8 @@ export default function FunnyThemeToggle({
   };
 
   const goDark = (e: React.MouseEvent) => {
-    const description =
-      themeDisclaimers.dark[darkCount % themeDisclaimers.dark.length];
+    const darkMessages = t("common", "theme.dark");
+    const description = darkMessages[darkCount % darkMessages.length];
     setDarkCount(darkCount + 1);
     toast({
       description: description,
@@ -112,35 +111,35 @@ export default function FunnyThemeToggle({
       <div
         className={cn(
           "absolute right-0 z-30 transition-all duration-500",
-          isDarkTheme ? "top-[100%]" : "top-0",
+          isDarkTheme ? "top-full" : "top-0",
         )}
       >
-        <div className="absolute left-[calc(-1*(var(--header-height)*0.5)/20*12)] top-[calc(1*(var(--header-height)*0.5)/20*4)] h-[calc((var(--header-height)*0.5)/20*16)] aspect-[1/1] rounded-full bg-white"></div>
-        <div className="absolute left-[calc(-1*(var(--header-height)*0.5)/20*18)] top-[calc(1*(var(--header-height)*0.5)/20*12)] h-[calc((var(--header-height)*0.5)/20*12)] aspect-[1/1] rounded-full bg-white"></div>
-        <div className="absolute left-[calc(-1*(var(--header-height)*0.5)/20*26)] top-[calc(1*(var(--header-height)*0.5)/20*14)] h-[calc((var(--header-height)*0.5)/20*12)] aspect-[1/1] rounded-full bg-white"></div>
-        <div className="absolute left-[calc(-1*(var(--header-height)*0.5)/20*38)] top-[calc(1*(var(--header-height)*0.5)/20*16)] h-[calc((var(--header-height)*0.5)/20*20)] aspect-[1/1] rounded-full bg-white"></div>
-        <div className="absolute left-[calc(-1*(var(--header-height)*0.5)/20*44)] top-[calc(1*(var(--header-height)*0.5)/20*17)] h-[calc((var(--header-height)*0.5)/20*14)] aspect-[1/1] rounded-full bg-white"></div>
+        <div className="absolute left-[calc(-1*(var(--header-height)*0.5)/20*12)] top-[calc(1*(var(--header-height)*0.5)/20*4)] h-[calc((var(--header-height)*0.5)/20*16)] aspect-square rounded-full bg-white"></div>
+        <div className="absolute left-[calc(-1*(var(--header-height)*0.5)/20*18)] top-[calc(1*(var(--header-height)*0.5)/20*12)] h-[calc((var(--header-height)*0.5)/20*12)] aspect-square rounded-full bg-white"></div>
+        <div className="absolute left-[calc(-1*(var(--header-height)*0.5)/20*26)] top-[calc(1*(var(--header-height)*0.5)/20*14)] h-[calc((var(--header-height)*0.5)/20*12)] aspect-square rounded-full bg-white"></div>
+        <div className="absolute left-[calc(-1*(var(--header-height)*0.5)/20*38)] top-[calc(1*(var(--header-height)*0.5)/20*16)] h-[calc((var(--header-height)*0.5)/20*20)] aspect-square rounded-full bg-white"></div>
+        <div className="absolute left-[calc(-1*(var(--header-height)*0.5)/20*44)] top-[calc(1*(var(--header-height)*0.5)/20*17)] h-[calc((var(--header-height)*0.5)/20*14)] aspect-square rounded-full bg-white"></div>
       </div>
 
       {/* Blue Background Clouds */}
       <div
         className={cn(
-          "absolute right-1 z-[0] transition-all duration-500",
-          isDarkTheme ? "top-[100%]" : "top-[-15%]",
+          "absolute right-1 z-0 transition-all duration-500",
+          isDarkTheme ? "top-full" : "top-[-15%]",
         )}
       >
-        <div className="absolute left-[calc(-1*(var(--header-height)*0.5)/20*12)] top-[calc(1*(var(--header-height)*0.5)/20*4)] h-[calc((var(--header-height)*0.5)/20*16)] aspect-[1/1] rounded-full bg-blue-200"></div>
-        <div className="absolute left-[calc(-1*(var(--header-height)*0.5)/20*18)] top-[calc(1*(var(--header-height)*0.5)/20*12)] h-[calc((var(--header-height)*0.5)/20*12)] aspect-[1/1] rounded-full bg-blue-200"></div>
-        <div className="absolute left-[calc(-1*(var(--header-height)*0.5)/20*26)] top-[calc(1*(var(--header-height)*0.5)/20*14)] h-[calc((var(--header-height)*0.5)/20*12)] aspect-[1/1] rounded-full bg-blue-200"></div>
-        <div className="absolute left-[calc(-1*(var(--header-height)*0.5)/20*38)] top-[calc(1*(var(--header-height)*0.5)/20*16)] h-[calc((var(--header-height)*0.5)/20*20)] aspect-[1/1] rounded-full bg-blue-200"></div>
-        <div className="absolute left-[calc(-1*(var(--header-height)*0.5)/20*44)] top-[calc(1*(var(--header-height)*0.5)/20*17)] h-[calc((var(--header-height)*0.5)/20*14)] aspect-[1/1] rounded-full bg-blue-200"></div>
+        <div className="absolute left-[calc(-1*(var(--header-height)*0.5)/20*12)] top-[calc(1*(var(--header-height)*0.5)/20*4)] h-[calc((var(--header-height)*0.5)/20*16)] aspect-square rounded-full bg-blue-200"></div>
+        <div className="absolute left-[calc(-1*(var(--header-height)*0.5)/20*18)] top-[calc(1*(var(--header-height)*0.5)/20*12)] h-[calc((var(--header-height)*0.5)/20*12)] aspect-square rounded-full bg-blue-200"></div>
+        <div className="absolute left-[calc(-1*(var(--header-height)*0.5)/20*26)] top-[calc(1*(var(--header-height)*0.5)/20*14)] h-[calc((var(--header-height)*0.5)/20*12)] aspect-square rounded-full bg-blue-200"></div>
+        <div className="absolute left-[calc(-1*(var(--header-height)*0.5)/20*38)] top-[calc(1*(var(--header-height)*0.5)/20*16)] h-[calc((var(--header-height)*0.5)/20*20)] aspect-square rounded-full bg-blue-200"></div>
+        <div className="absolute left-[calc(-1*(var(--header-height)*0.5)/20*44)] top-[calc(1*(var(--header-height)*0.5)/20*17)] h-[calc((var(--header-height)*0.5)/20*14)] aspect-square rounded-full bg-blue-200"></div>
       </div>
 
       {/* Stars */}
       <div
         className={cn(
-          "absolute left-0 w-full h-full pointer-events-none z-[0] transition-all duration-500 text-yellow-300",
-          isDarkTheme ? "bottom-[0]" : "bottom-[100%]",
+          "absolute left-0 w-full h-full pointer-events-none z-0 transition-all duration-500 text-yellow-300",
+          isDarkTheme ? "bottom-0" : "bottom-full",
         )}
       >
         <Stars className="absolute left-[5%] top-[12%] w-[7%] h-auto fill-white stroke-white" />
@@ -158,20 +157,20 @@ export default function FunnyThemeToggle({
       {/* Toggle Button Container - Sun/Moon */}
       <div
         className={cn(
-          "group absolute top-1/2 -translate-y-1/2 rounded-full shadow-lg transition-all duration-500 h-[calc((var(--header-height)*0.5)-8px)] aspect-[1/1] flex items-center justify-center",
+          "group absolute top-1/2 -translate-y-1/2 rounded-full shadow-lg transition-all duration-500 h-[calc((var(--header-height)*0.5)-8px)] aspect-square flex items-center justify-center",
           isDarkTheme
             ? "left-[calc((var(--header-height)*0.5)*3/2)]"
-            : "left-[6px]",
+            : "left-1.5",
         )}
       >
-        <div className="absolute rounded-full pointer-events-none h-[calc(3*(var(--header-height)*0.5))] aspect-[1/1] bg-stone-100/15 z-[0] transition-transform duration-600 group-hover:scale-[1.15]"></div>
-        <div className="absolute rounded-full pointer-events-none h-[calc(2.3*(var(--header-height)*0.5))] aspect-[1/1] bg-stone-100/20 z-[0] transition-transform duration-600 group-hover:scale-[1.15]"></div>
-        <div className="absolute rounded-full pointer-events-none h-[calc(1.5*(var(--header-height)*0.5))] aspect-[1/1] bg-stone-100/40 z-[0] transition-transform duration-600 group-hover:scale-[1.15]"></div>
+        <div className="absolute rounded-full pointer-events-none h-[calc(3*(var(--header-height)*0.5))] aspect-square bg-stone-100/15 z-0 transition-transform duration-600 group-hover:scale-[1.15]"></div>
+        <div className="absolute rounded-full pointer-events-none h-[calc(2.3*(var(--header-height)*0.5))] aspect-square bg-stone-100/20 z-0 transition-transform duration-600 group-hover:scale-[1.15]"></div>
+        <div className="absolute rounded-full pointer-events-none h-[calc(1.5*(var(--header-height)*0.5))] aspect-square bg-stone-100/40 z-0 transition-transform duration-600 group-hover:scale-[1.15]"></div>
 
         {/* Sun */}
         <div
           className={cn(
-            "absolute h-[calc((var(--header-height)*0.5)-8px)] aspect-[1/1] rounded-full transition-all duration-500 bg-yellow-400",
+            "absolute h-[calc((var(--header-height)*0.5)-8px)] aspect-square rounded-full transition-all duration-500 bg-yellow-400",
             isDarkTheme
               ? "left-0 opacity-0 pointer-events-none"
               : "left-0 opacity-100",
@@ -181,29 +180,29 @@ export default function FunnyThemeToggle({
         {/* Moon */}
         <div
           className={cn(
-            "absolute h-[calc((var(--header-height)*0.5)-8px)] aspect-[1/1] rounded-full transition-all duration-500 bg-slate-300",
+            "absolute h-[calc((var(--header-height)*0.5)-8px)] aspect-square rounded-full transition-all duration-500 bg-slate-300",
             isDarkTheme
               ? "left-0 opacity-100"
               : "left-0 opacity-0 pointer-events-none",
           )}
         >
-          <div className="absolute top-[4px] left-[14px] w-2 h-2 bg-slate-400 rounded-full shadow-inner" />
-          <div className="absolute top-[16px] left-[6px] w-3 h-3 bg-slate-400 rounded-full shadow-inner" />
-          <div className="absolute top-[18px] left-[22px] w-1.5 h-1.5 bg-slate-400 rounded-full shadow-inner" />
+          <div className="absolute top-1 left-3.5 w-2 h-2 bg-slate-400 rounded-full shadow-inner" />
+          <div className="absolute top-4 left-1.5 w-3 h-3 bg-slate-400 rounded-full shadow-inner" />
+          <div className="absolute top-4.5 left-5.5 w-1.5 h-1.5 bg-slate-400 rounded-full shadow-inner" />
         </div>
       </div>
           <span className="sr-only">Toggle theme</span>
         </Button>
       </PopoverTrigger>
-      <PopoverContent className="z-[99999] flex flex-col items-center gap-2 w-80 md:w-auto md:max-w-[420px]">
+      <PopoverContent className="z-99999 flex flex-col items-center gap-2 w-80 md:w-auto md:max-w-105">
         <p className="text-sm text-center">
           {
-            themeDisclaimers.light[
-              lightCount % themeDisclaimers.light.length
+            t("common", "theme.light")[
+              lightCount % t("common", "theme.light").length
             ]
           }
         </p>
-        <Button onClick={goLight}>Go Light</Button>
+        <Button onClick={goLight}>{t("common", "buttons.goLight")}</Button>
       </PopoverContent>
     </Popover>
   );

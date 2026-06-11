@@ -4,7 +4,9 @@ import { Application, SPEObject, SplineEvent } from "@splinetool/runtime";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 const Spline = React.lazy(() => import("@splinetool/react-spline"));
-import { Skill, SkillNames, SKILLS } from "@/data/constants";
+import { SkillNames, SKILLS } from "@/lib/app-config";
+import type { Skill } from "@/lib/app-config";
+import { useLocale } from "@/locales/use-locale";
 import { sleep } from "@/lib/utils";
 import { useMediaQuery } from "@/hooks/use-media-query";
 import { usePreloader } from "./preloader";
@@ -16,6 +18,9 @@ import { useSounds } from "./realtime/hooks/use-sounds";
 gsap.registerPlugin(ScrollTrigger);
 
 const AnimatedBackground = () => {
+  const { t } = useLocale();
+  const tRef = useRef(t);
+  tRef.current = t;
   const { isLoading, bypassLoading } = usePreloader();
   const { theme } = useTheme();
   const isMobile = useMediaQuery("(max-width: 767px)");
@@ -89,8 +94,8 @@ const AnimatedBackground = () => {
         playPressSound();
         setSelectedSkill(skill);
         selectedSkillRef.current = skill;
-        splineApp.setVariable("heading", skill.label);
-        splineApp.setVariable("desc", skill.shortDescription);
+        splineApp.setVariable("heading", tRef.current("skills", skill.name + ".label"));
+        splineApp.setVariable("desc", tRef.current("skills", skill.name + ".shortDescription"));
       }
     });
     splineApp.addEventListener("mouseHover", handleMouseHover);
@@ -350,9 +355,9 @@ const AnimatedBackground = () => {
 
   useEffect(() => {
     if (!selectedSkill || !splineApp) return;
-    splineApp.setVariable("heading", selectedSkill.label);
-    splineApp.setVariable("desc", selectedSkill.shortDescription);
-  }, [selectedSkill]);
+    splineApp.setVariable("heading", tRef.current("skills", selectedSkill.name + ".label"));
+    splineApp.setVariable("desc", tRef.current("skills", selectedSkill.name + ".shortDescription"));
+  }, [selectedSkill, splineApp]);
 
   // Handle rotation and teardown animations based on active section
   useEffect(() => {

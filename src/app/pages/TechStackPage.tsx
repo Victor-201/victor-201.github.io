@@ -1,6 +1,8 @@
+"use client";
 import React from "react";
 import { SEO } from "@/infra/SEO";
-import { SKILLS, getSkillIconUrl } from "@/data/constants";
+import { SKILLS, getSkillIconUrl } from "@/lib/app-config";
+import { useLocale } from "@/locales/use-locale";
 
 /** Returns true for hex colors that are perceptually very dark (luminance < 0.08). */
 function isDarkColor(hex: string): boolean {
@@ -13,11 +15,12 @@ function isDarkColor(hex: string): boolean {
 }
 
 function TechStackPage() {
+  const { t } = useLocale();
   return (
     <>
-      <SEO title="Skills & Technologies — Nguyễn Văn Thắng" />
+      <SEO title={t("seo", "techStackPageTitle")} />
       <div className="container mx-auto px-4 pt-24 pb-20 text-zinc-300">
-        <h1 className="text-4xl mb-8">Skills &amp; Technologies</h1>
+        <h1 className="text-4xl mb-8">{t("seo", "techStackPageHeading")}</h1>
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
           {Object.values(SKILLS).map((skill) => (
             <div
@@ -27,7 +30,7 @@ function TechStackPage() {
             >
               <img
                 src={getSkillIconUrl(skill)}
-                alt={skill.label}
+                alt={t("skills", skill.name + ".label")}
                 width={50}
                 height={50}
                 className={[
@@ -38,7 +41,7 @@ function TechStackPage() {
                   .trim()}
               />
               <span className="text-xs text-zinc-400 text-center">
-                {skill.label}
+                {t("skills", skill.name + ".label")}
               </span>
             </div>
           ))}

@@ -104,8 +104,8 @@ export const BoxReveal = ({
         }}
         style={{
           position: "absolute",
-          top: 4,
-          bottom: 4,
+          top: 8,
+          bottom: 8,
           left: 0,
           right: 0,
           zIndex: 20,

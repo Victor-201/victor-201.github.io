@@ -7,15 +7,18 @@ import Nav from "./nav";
 import { cn } from "@/lib/utils";
 import FunnyThemeToggle from "../theme/funny-theme-toggle";
 import { Button } from "../ui/button";
-import { config } from "@/data/config";
+import { config } from "@/lib/app-config";
+import { useLocale } from "@/locales/use-locale";
 import OnlineUsers from "../realtime/online-users";
 import { GitHubStarsButton } from "../ui/shadcn-io/github-stars-button";
+import LocaleToggle from "../locale-toggle";
 
 interface HeaderProps {
   loader?: boolean;
 }
 
 const Header = ({ loader }: HeaderProps) => {
+  const { t } = useLocale();
   const [isActive, setIsActive] = useState<boolean>(false);
 
   return (
@@ -36,7 +39,7 @@ const Header = ({ loader }: HeaderProps) => {
       <motion.header
         className={cn(
           styles.header,
-          "transition-colors delay-100 duration-500 ease-in z-[1000]",
+          "transition-colors delay-100 duration-500 ease-in z-1000",
         )}
         style={{
           background: isActive ? "hsl(var(--background) / .1)" : "transparent",
@@ -55,21 +58,23 @@ const Header = ({ loader }: HeaderProps) => {
         <div className={cn(styles.bar, "flex items-center justify-between")}>
           <Link to="/" className="flex items-center justify-center">
             <Button variant={"link"} className="text-xl">
-              {config.author}
+              {t("seo", "author")}
             </Button>
           </Link>
 
-          <FunnyThemeToggle className="h-[calc(var(--header-height)*0.5)] aspect-[5/2] mr-4 md:flex" />
+          <FunnyThemeToggle className="h-[calc(var(--header-height)*0.5)] aspect-5/2 mr-4 md:flex" />
 
           <OnlineUsers />
 
-          {config.githubUsername && config.githubRepo && (
+          {config.githubUsername && (
             <GitHubStarsButton
               username={config.githubUsername}
               repo={config.githubRepo}
               className="mr-4"
             />
           )}
+
+          <LocaleToggle className="mr-4" />
 
           <Button
             variant={"ghost"}
