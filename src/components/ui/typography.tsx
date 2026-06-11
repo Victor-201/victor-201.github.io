@@ -81,7 +81,7 @@ export function TypographyP({
   className?: string;
 }) {
   return (
-    <p className={cn("leading-7 [&:not(:first-child)]:mt-6", className)}>
+    <p className={cn("leading-7 not-first:mt-6", className)}>
       {children}
     </p>
   );
@@ -100,10 +100,8 @@ export function TypographyBlockquote({
   );
 }
 export function TypographyTable({
-  children,
   className,
 }: {
-  children: ReactNode;
   className?: string;
 }) {
   return (
@@ -113,14 +111,14 @@ export function TypographyTable({
           <tr className={cn("m-0 border-t p-0 even:bg-muted")}>
             <th
               className={cn(
-                "border px-4 py-2 text-left font-bold [&[align=center]]:text-center [&[align=right]]:text-right"
+                "border px-4 py-2 text-left font-bold [[align=center]]:text-center [[align=right]]:text-right"
               )}
             >
               King&apos;s Treasury
             </th>
             <th
               className={cn(
-                "border px-4 py-2 text-left font-bold [&[align=center]]:text-center [&[align=right]]:text-right"
+                "border px-4 py-2 text-left font-bold [[align=center]]:text-center [[align=right]]:text-right"
               )}
             >
               People&apos;s happiness
@@ -131,14 +129,14 @@ export function TypographyTable({
           <tr className={cn("m-0 border-t p-0 even:bg-muted")}>
             <td
               className={cn(
-                "border px-4 py-2 text-left [&[align=center]]:text-center [&[align=right]]:text-right"
+                "border px-4 py-2 text-left [[align=center]]:text-center [[align=right]]:text-right"
               )}
             >
               Empty
             </td>
             <td
               className={cn(
-                "border px-4 py-2 text-left [&[align=center]]:text-center [&[align=right]]:text-right"
+                "border px-4 py-2 text-left [[align=center]]:text-center [[align=right]]:text-right"
               )}
             >
               Overflowing
@@ -147,14 +145,14 @@ export function TypographyTable({
           <tr className={cn("m-0 border-t p-0 even:bg-muted")}>
             <td
               className={cn(
-                "border px-4 py-2 text-left [&[align=center]]:text-center [&[align=right]]:text-right"
+                "border px-4 py-2 text-left [[align=center]]:text-center [[align=right]]:text-right"
               )}
             >
               Modest
             </td>
             <td
               className={cn(
-                "border px-4 py-2 text-left [&[align=center]]:text-center [&[align=right]]:text-right"
+                "border px-4 py-2 text-left [[align=center]]:text-center [[align=right]]:text-right"
               )}
             >
               Satisfied
@@ -163,14 +161,14 @@ export function TypographyTable({
           <tr className={cn("m-0 border-t p-0 even:bg-muted")}>
             <td
               className={cn(
-                "border px-4 py-2 text-left [&[align=center]]:text-center [&[align=right]]:text-right"
+                "border px-4 py-2 text-left [[align=center]]:text-center [[align=right]]:text-right"
               )}
             >
               Full
             </td>
             <td
               className={cn(
-                "border px-4 py-2 text-left [&[align=center]]:text-center [&[align=right]]:text-right"
+                "border px-4 py-2 text-left [[align=center]]:text-center [[align=right]]:text-right"
               )}
             >
               Ecstatic

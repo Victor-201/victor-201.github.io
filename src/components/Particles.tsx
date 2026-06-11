@@ -237,7 +237,7 @@ export default function Particles({
     <div
       className={cn(
         className,
-        "dark:bg-gradient-to-tl from-black via-zinc-600/20 to-black"
+        "dark:bg-linear-to-tl from-black via-zinc-600/20 to-black"
       )}
       ref={canvasContainerRef}
       aria-hidden="true"

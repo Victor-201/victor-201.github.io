@@ -21,7 +21,7 @@ export const RadialMenuPresentational = ({
     <AnimatePresence>
       {isOpen && (
         <div
-          className="fixed z-[100]"
+          className="fixed z-100"
           style={{
             left: position.x,
             top: position.y,

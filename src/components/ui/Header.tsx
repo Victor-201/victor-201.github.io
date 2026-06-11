@@ -13,7 +13,7 @@ const LINKS = [
 const Header = () => {
   const { pathname: activeRoute } = useLocation();
   return (
-    <div className="w-screen flex justify-center items-center h-[60px] container-xl mx-auto px-4 absolute top-0">
+    <div className="w-screen flex justify-center items-center h-15 container-xl mx-auto px-4 absolute top-0">
       {activeRoute !== "/" && (
         <Link
           to={"/"}

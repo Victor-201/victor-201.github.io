@@ -104,7 +104,7 @@ export const ModalBody = ({
             opacity: 0,
             backdropFilter: "blur(0px)",
           }}
-          className="modall fixed [perspective:800px] [transform-style:preserve-3d] inset-0 h-full w-full  flex items-center justify-center z-50"
+          className="modall fixed perspective-midrange transform-3d inset-0 h-full w-full  flex items-center justify-center z-50"
         >
           <Overlay />
 
@@ -207,7 +207,7 @@ const CloseIcon = () => {
   return (
     <button
       onClick={() => setOpen(false)}
-      className="absolute top-4 right-4 group z-[9999]"
+      className="absolute top-4 right-4 group z-9999"
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
