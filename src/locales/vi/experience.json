@@ -1,0 +1,24 @@
+{
+  "items": [
+    {
+      "id": 1,
+      "title": "Kỹ sư Full Stack",
+      "company": "Dự án phát triển phần mềm",
+      "description": [
+        "Thiết kế hệ thống quản lý trạm sạc EV theo kiến trúc microservices với Kong API Gateway, RabbitMQ, Docker và Postgres.",
+        "Phát triển StudyHub, nền tảng học tập xã hội hỗ trợ chat thời gian thực, nhóm học tập và chia sẻ tài nguyên.",
+        "Xây dựng hệ thống quản lý thu hồi nợ (ARMS) áp dụng Clean Architecture để số hóa quy trình theo dõi nợ cho doanh nghiệp."
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Kỹ sư phần mềm",
+      "company": "Dự án nghiên cứu và học thuật",
+      "description": [
+        "Dẫn dắt phát triển mạng xã hội mở rộng sử dụng React, Node.js và MongoDB cho tương tác thời gian thực.",
+        "Xây dựng hệ thống cảnh báo buồn ngủ thông minh dùng AI và Thị giác máy tính để giám sát mệt mỏi thời gian thực và phòng ngừa tai nạn.",
+        "Phát triển công cụ dịch video AI hỗ trợ nhận dạng giọng nói tự động và tổng hợp âm thanh tiếng Việt."
+      ]
+    }
+  ]
+}

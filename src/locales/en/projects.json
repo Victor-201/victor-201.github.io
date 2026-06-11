@@ -1,0 +1,53 @@
+{
+  "items": [
+    {
+      "id": "ev-charging",
+      "title": "EV Charging Station Management System",
+      "category": "Infrastructure Platform",
+      "description": "A complete full-stack platform supporting EV drivers (station search, booking, charging & payment), charge station staff (session & payment management), and administrators (system-wide analytics & reporting). Built with microservices architecture across 6 backend services, Kong API Gateway, RabbitMQ message broker, Apache NiFi ETL pipeline, Docker & Kubernetes.",
+      "techStack": "Express.js + TypeScript microservices, NestJS + Prisma, React Native mobile app, React 18 + Vite web portal, PostgreSQL & MySQL databases."
+    },
+    {
+      "id": "studyhub",
+      "title": "StudyHub Platform",
+      "category": "Social Learning Platform",
+      "description": "A social learning platform for students to share study materials, create study groups, engage in real-time chat, and rate resources."
+    },
+    {
+      "id": "customer-debt",
+      "title": "Accounts Receivable Management",
+      "category": "Business Management",
+      "description": "A full-stack customer debt management system for tracking receivables, payment history, and customer records. Built with Clean Architecture to digitize the Accounts Receivable process."
+    },
+    {
+      "id": "social-network",
+      "title": "Capstone Social Network",
+      "category": "Social Network",
+      "description": "A social network connecting users to share posts, images, and interact. Features user profiles, news feed, friend/follow system, and group participation."
+    },
+    {
+      "id": "web-video-translator",
+      "title": "Web Video Translator",
+      "category": "AI Web Tool",
+      "description": "A full-stack AI-powered web application that detects videos from any website and translates them into Vietnamese with subtitles and voice-over."
+    },
+    {
+      "id": "smtp-linux",
+      "title": "SMTP Linux Mail Server",
+      "category": "System Engineering",
+      "description": "A custom SMTP server implementation on Linux to demonstrate low-level process management, I/O handling, and mail transfer protocol execution using Python."
+    },
+    {
+      "id": "se-drowsiness-alert",
+      "title": "Driver Drowsiness Alert",
+      "category": "AI / Computer Vision",
+      "description": "An AI and Computer Vision application that monitors drivers in real-time, detecting signs of drowsiness or distraction to prevent accidents."
+    },
+    {
+      "id": "victor-portfolio",
+      "title": "Victor IT Portfolio",
+      "category": "Web Development",
+      "description": "A modern, responsive personal portfolio for IT professionals, built with React, Vite, TailwindCSS, and Framer Motion. Showcases high-quality frontend design principles."
+    }
+  ]
+}

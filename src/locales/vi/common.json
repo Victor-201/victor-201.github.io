@@ -1,0 +1,73 @@
+{
+  "nav": {
+    "home": "Trang chủ",
+    "about": "Giới thiệu",
+    "skills": "Kỹ năng",
+    "projects": "Dự án",
+    "blogs": "Bài viết",
+    "contact": "Liên hệ"
+  },
+  "hero": {
+    "greeting": "Xin chào, tôi là",
+    "role": "Lập trình viên Full Stack",
+    "description": "Tôi xây dựng các ứng dụng web, công cụ AI và nền tảng mở rộng.",
+    "downloadResume": "Tải CV",
+    "hireMe": "Thuê tôi"
+  },
+  "footer": {
+    "copyright": "Đã đăng ký bản quyền."
+  },
+  "buttons": {
+    "visitWebsite": "Truy cập",
+    "github": "GitHub",
+    "goLight": "Chuyển sáng",
+    "cancel": "Hủy",
+    "visit": "Xem"
+  },
+  "section": {
+    "experience": "Kinh nghiệm",
+    "experienceDesc": "Hành trình nghề nghiệp của tôi.",
+    "frontend": "Giao diện",
+    "backend": "Hệ thống",
+    "techStack": "Công nghệ",
+    "techStackHint": "(gợi ý: nhấn phím bất kỳ)"
+  },
+  "contact": {
+    "title": "Biểu mẫu liên hệ",
+    "description": "Vui lòng liên hệ trực tiếp với tôi qua {email} hoặc điền thông tin bên dưới.",
+    "letsWork": "Hãy cùng làm việc",
+    "fullName": "Họ và tên",
+    "yourName": "Tên của bạn",
+    "emailAddress": "Địa chỉ Email",
+    "emailPlaceholder": "ban@example.com",
+    "yourMessage": "Lời nhắn",
+    "messagePlaceholder": "Kể tôi nghe về dự án của bạn,",
+    "privacy": "Tôi sẽ không bao giờ chia sẻ dữ liệu của bạn với bất kỳ ai. Hứa danh dự!",
+    "sendMessage": "Gửi tin nhắn",
+    "pleaseWait": "Vui lòng đợi",
+    "successTitle": "Cảm ơn bạn!",
+    "successDesc": "Tôi sẽ liên hệ lại với bạn sớm nhất có thể.",
+    "errorTitle": "Lỗi",
+    "errorDesc": "Đã xảy ra lỗi! Vui lòng kiểm tra lại thông tin."
+  },
+  "theme": {
+    "light": [
+      "ÁNH SÁNG TỐI THƯỢNG! Tôi chưa sẵn sàng về mặt tinh thần cho độ sáng này.",
+      "Chuyển sáng rồi à? Mắt tôi vừa nộp đơn từ chức đấy.",
+      "POV: Bạn nhìn thẳng vào mặt trời và nghĩ 'Ừ, sáng thêm tí nữa đi'.",
+      "Chế độ sáng đã kích hoạt. Đề xuất đeo kính râm, nhưng mũ hàn có lẽ hiệu quả hơn.",
+      "Bro thực sự chọn chế độ sáng. Tôi không phán xét... chỉ đang thắc mắc mắt bạn đã làm gì để phải chịu đựng điều này."
+    ],
+    "dark": [
+      "Chào mừng trở lại chế độ tối. Mắt bạn chính thức được rút khỏi máy trợ thở.",
+      "Chế độ tối đã kích hoạt. Mọi thứ lại đúng chỗ và vũ trụ dần lành lại.",
+      "Lại về phe bóng tối rồi hả? Tụi tôi đã giữ chỗ cho bạn và cả không khí mát mẻ nữa.",
+      "Chế độ tối đã bật. Màn hình của bạn trông ngầu hơn, setup ngầu hơn, và tự dưng bạn cũng ngầu hơn.",
+      "Lựa chọn tốt. Ở đâu đó ngoài kia, một cặp mắt làm việc quá sức vừa thở phào nhẹ nhõm."
+    ]
+  },
+  "about": {
+    "pageTitle": "Về tôi",
+    "content": "Lập trình viên Full Stack với chuyên môn xây dựng ứng dụng web hiện đại, công cụ AI và hệ thống hạ tầng mở rộng."
+  }
+}

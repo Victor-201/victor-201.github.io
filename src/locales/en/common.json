@@ -1,0 +1,73 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "skills": "Skills",
+    "projects": "Projects",
+    "blogs": "Blogs",
+    "contact": "Contact"
+  },
+  "hero": {
+    "greeting": "Hi, I'm",
+    "role": "Full Stack Developer",
+    "description": "I build impactful web apps, AI tools, and scalable platforms.",
+    "downloadResume": "Download Resume",
+    "hireMe": "Hire Me"
+  },
+  "footer": {
+    "copyright": "All rights reserved."
+  },
+  "buttons": {
+    "visitWebsite": "Visit Website",
+    "github": "GitHub",
+    "goLight": "Go Light",
+    "cancel": "Cancel",
+    "visit": "Visit"
+  },
+  "section": {
+    "experience": "Experience",
+    "experienceDesc": "My professional journey.",
+    "frontend": "Frontend",
+    "backend": "Backend",
+    "techStack": "Tech Stack",
+    "techStackHint": "(hint: press a key)"
+  },
+  "contact": {
+    "title": "Contact Form",
+    "description": "Please contact me directly at {email} or drop your info here.",
+    "letsWork": "Let's Work Together",
+    "fullName": "Full name",
+    "yourName": "Your Name",
+    "emailAddress": "Email Address",
+    "emailPlaceholder": "you@example.com",
+    "yourMessage": "Your Message",
+    "messagePlaceholder": "Tell me about about your project,",
+    "privacy": "I'll never share your data with anyone else. Pinky promise!",
+    "sendMessage": "Send Message",
+    "pleaseWait": "Please wait",
+    "successTitle": "Thank you!",
+    "successDesc": "I'll get back to you as soon as possible.",
+    "errorTitle": "Error",
+    "errorDesc": "Something went wrong! Please check the fields."
+  },
+  "theme": {
+    "light": [
+      "FLASHBANG OUT! I wasn't emotionally or physically prepared for that much brightness.",
+      "You switched to light mode? That's cool and all, but my retinas just submitted their resignation.",
+      "POV: You looked directly at the sun and thought, 'Yeah, I could use a little more brightness.'",
+      "Light mode activated. Sunglasses are highly recommended, but a welding helmet might work better.",
+      "Bro really picked light mode. I'm not judging... I'm just wondering what your eyes ever did to you."
+    ],
+    "dark": [
+      "Welcome back to dark mode. Your eyes have officially been taken off life support.",
+      "Dark mode activated. Everything feels right again, and the universe is slowly healing.",
+      "Back to the dark side, I see. We saved your spot and even kept the vibes intact.",
+      "Dark mode enabled. Your screen looks cooler, your setup looks cooler, and somehow you do too.",
+      "Good choice. Somewhere out there, a pair of overworked eyeballs just breathed a sigh of relief."
+    ]
+  },
+  "about": {
+    "pageTitle": "About Me",
+    "content": "Full Stack Developer with expertise in building modern web applications, AI-powered tools, and scalable infrastructure systems."
+  }
+}

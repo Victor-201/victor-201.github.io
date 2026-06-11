@@ -1,0 +1,53 @@
+{
+  "items": [
+    {
+      "id": "ev-charging",
+      "title": "Hệ thống quản lý trạm sạc EV",
+      "category": "Nền tảng hạ tầng",
+      "description": "Nền tảng full-stack hỗ trợ tài xế EV (tìm trạm, đặt lịch, sạc và thanh toán), nhân viên trạm sạc (quản lý phiên và thanh toán), và quản trị viên (phân tích và báo cáo toàn hệ thống). Xây dựng với kiến trúc microservices gồm 6 dịch vụ backend, Kong API Gateway, RabbitMQ message broker, Apache NiFi ETL pipeline, Docker và Kubernetes.",
+      "techStack": "Express.js + TypeScript microservices, NestJS + Prisma, ứng dụng di động React Native, cổng web React 18 + Vite, cơ sở dữ liệu PostgreSQL và MySQL."
+    },
+    {
+      "id": "studyhub",
+      "title": "Nền tảng StudyHub",
+      "category": "Nền tảng học tập xã hội",
+      "description": "Nền tảng học tập xã hội cho sinh viên chia sẻ tài liệu học tập, tạo nhóm học, trò chuyện thời gian thực và đánh giá tài nguyên."
+    },
+    {
+      "id": "customer-debt",
+      "title": "Quản lý thu hồi công nợ",
+      "category": "Quản lý doanh nghiệp",
+      "description": "Hệ thống quản lý nợ khách hàng full-stack theo dõi khoản phải thu, lịch sử thanh toán và hồ sơ khách hàng. Xây dựng với Clean Architecture để số hóa quy trình quản lý công nợ."
+    },
+    {
+      "id": "social-network",
+      "title": "Mạng xã hội Capstone",
+      "category": "Mạng xã hội",
+      "description": "Mạng xã hội kết nối người dùng để chia sẻ bài viết và hình ảnh. Có hồ sơ cá nhân, bảng tin, hệ thống bạn bè/theo dõi và tham gia nhóm."
+    },
+    {
+      "id": "web-video-translator",
+      "title": "Trình dịch video web",
+      "category": "Công cụ AI",
+      "description": "Ứng dụng web AI full-stack phát hiện video từ bất kỳ trang web nào và dịch sang tiếng Việt với phụ đề và thuyết minh."
+    },
+    {
+      "id": "smtp-linux",
+      "title": "Máy chủ thư SMTP Linux",
+      "category": "Kỹ thuật hệ thống",
+      "description": "Triển khai máy chủ SMTP tùy chỉnh trên Linux để chứng minh quản lý tiến trình cấp thấp, xử lý I/O và giao thức truyền thư bằng Python."
+    },
+    {
+      "id": "se-drowsiness-alert",
+      "title": "Cảnh báo buồn ngủ tài xế",
+      "category": "AI / Thị giác máy tính",
+      "description": "Ứng dụng AI và Thị giác máy tính giám sát tài xế theo thời gian thực, phát hiện dấu hiệu buồn ngủ hoặc mất tập trung để ngăn ngừa tai nạn."
+    },
+    {
+      "id": "victor-portfolio",
+      "title": "Portfolio IT Victor",
+      "category": "Phát triển web",
+      "description": "Portfolio cá nhân hiện đại, tương thích di động cho dân IT, xây dựng với React, Vite, TailwindCSS và Framer Motion."
+    }
+  ]
+}

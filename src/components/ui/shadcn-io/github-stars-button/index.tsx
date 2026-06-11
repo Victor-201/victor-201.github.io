@@ -61,7 +61,7 @@ function GitHubStarsButton({
   const [isLoading, setIsLoading] = useState(true);
 
   const repoUrl = useMemo(
-    () => `https://github.com/${username}/${repo}`,
+    () => repo ? `https://github.com/${username}/${repo}` : `https://github.com/${username}`,
     [username, repo],
   );
 

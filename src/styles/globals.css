@@ -29,8 +29,8 @@
   --color-chart-4: hsl(var(--chart-4));
   --color-chart-5: hsl(var(--chart-5));
 
-  --font-sans: 'Inter', sans-serif;
-  --font-display: 'Archivo Black', sans-serif;
+  --font-sans: 'Be Vietnam Pro', sans-serif;
+  --font-display: 'Be Vietnam Pro', sans-serif;
 
   --radius-DEFAULT: var(--radius, 0.5rem);
 }
@@ -100,6 +100,7 @@
   }
 
   body {
+    font-weight: 800;
     background-color: hsl(var(--background));
     color: hsl(var(--foreground));
     scroll-behavior: smooth;
