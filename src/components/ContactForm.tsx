@@ -24,19 +24,20 @@ const ContactForm = () => {
     e.preventDefault();
     setLoading(true);
     try {
-      const res = await fetch("/api/send", {
+      const res = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
+          access_key: import.meta.env.VITE_WEB3FORMS_ACCESS_KEY,
           fullName,
           email,
           message,
         }),
       });
       const data = await res.json();
-      if (data.error) throw new Error(data.error);
+      if (!data.success) throw new Error(data.message);
       toast({
         title: t("common", "contact.successTitle"),
         description: t("common", "contact.successDesc"),
@@ -97,6 +98,7 @@ const ContactForm = () => {
           required
           value={message}
           onChange={(e) => setMessage(e.target.value)}
+          className="h-33"
         />
         <p className="text-sm text-muted-foreground">
           {t("common", "contact.privacy")}
